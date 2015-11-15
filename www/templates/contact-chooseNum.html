@@ -1,0 +1,13 @@
+<ion-view view-title="{{contact.displayName}}">
+  <ion-content class="padding">
+	<h3 style="text-align:center">Available phone numbers</h3>
+	<p style="text-align:center" ng-if="contact.phones.length>1">Double click to choose a number.</p>
+	<ion-list>
+		<ion-item class="item" ng-repeat="number in contact.phones" >
+			
+			<a  ng-click="keep(contact,number)"> {{number.value}}</a>
+			
+        </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

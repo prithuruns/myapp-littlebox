@@ -1,0 +1,19 @@
+<ion-view view-title="Chosen Contacts">
+  <ion-content class="padding">
+    
+		<h1 class="title" style="text-align:center">Pick Contacts</h1>
+		<button class="button button-block button-positive" ng-click="pickContact()">Contacts</button>
+		<h2 class="title" style="text-align:center" ng-if="data.length">Chosen Contacts</h2>
+        <ion-list>
+            <ion-item class="item item-icon-right" ng-repeat="contact in data" type="item-text-wrap" ng-if="contact.phones.length>0" href="#/tab/chosencontacts/{{contact.id}}" >
+			<h2>{{contact.displayName}}</h2>
+                <p ng-if="contact.phones.length === 1">{{contact.phones[0].type}} : {{contact.phones[0].value}}</p>
+				
+                <p ng-if="contact.phones.length > 1">User has multiple numbers.</p>
+                <p ng-if="contact.phones.length > 1">Click to choose one.</p>
+				
+				<i class="icon ion-chevron-right icon-accessory" ></i>
+            </ion-item>
+        </ion-list>
+  </ion-content>
+</ion-view>
